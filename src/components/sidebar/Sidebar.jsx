@@ -1,12 +1,14 @@
 import React from "react";
 import { useCourse } from "../../shared/hooks/useCourse";
+import logo from "../../assets/img/logo2.png"
 
-export const Sidebar = () => {
+export const Sidebar = ({ onSelectCourse }) => {
   const { courses, loading } = useCourse();
 
   return (
-    <div style={{ width: '250px', padding: '1rem', borderRight: '1px solid #ccc' }}>
-      <h2>Home</h2>
+    <div className="sidebar">
+      <img src={logo} alt="logo" width={200} />
+      <h2 onClick={() => onSelectCourse(null)} style={{ cursor: "pointer" }}>Home</h2>
       <h3>Cursos</h3>
 
       {loading ? (
@@ -14,7 +16,11 @@ export const Sidebar = () => {
       ) : Array.isArray(courses) && courses.length > 0 ? (
         <ul>
           {courses.map((curso) => (
-            <li key={curso._id}>
+            <li
+              key={curso._id}
+              onClick={() => onSelectCourse(curso._id)}
+              style={{ cursor: "pointer" }}
+            >
               {curso.nameCourse}
             </li>
           ))}

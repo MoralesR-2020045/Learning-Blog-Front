@@ -1,31 +1,32 @@
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import { getPublications } from "../../services";
+import { getPublications, getPublication } from "../../services";
 
-export const usePublication = () => {
+export const usePublication = (uid = null) => {
   const [publicaciones, setPublicaciones] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchPublicaciones = async () => {
+  const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await getPublications();
-      console.log(response);
+      const response = uid
+        ? await getPublication(uid)
+        : await getPublications();
+
+        
+
       const data = response?.data?.publications;
       setPublicaciones(Array.isArray(data) ? data : []);
     } catch (error) {
-      toast.error(error.message || "Error al obtener las publicaciones");
+      toast.error(error.message || "Error al obtener publicaciones");
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchPublicaciones();
-  }, []);
+    fetchData();
+  }, [uid]);
 
-  return { 
-    publicaciones, 
-    loading 
-};
+  return { publicaciones, loading };
 };

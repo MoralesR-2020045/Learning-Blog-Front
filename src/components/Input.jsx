@@ -11,7 +11,6 @@ export const Input = ({ value, onChange, send }) => {
         onChange={onChange}
         className="comment-author"
       />
-      <button onClick={send} >Enviar</button>
     </div>
   );
 };

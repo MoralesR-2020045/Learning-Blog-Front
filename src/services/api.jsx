@@ -38,3 +38,25 @@ export const getComments = async (uid) => {
         };
     }
 }
+
+export const postComment = async (payload) => {
+    try {
+        return await apiClient.post('/comments/addComment', payload);
+    } catch (error) {
+        return { 
+            error: true,
+            message: error.message,
+        };
+    }
+}
+
+export const getPublication = async (uid) => {
+    try {
+        return await apiClient.get(`/publications/${uid}`);
+    } catch (error) {
+        return { 
+            error: true,
+            message: error.message,
+        };
+    }
+}

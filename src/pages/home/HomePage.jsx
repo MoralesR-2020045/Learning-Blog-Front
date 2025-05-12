@@ -1,12 +1,15 @@
-import React from 'react'
-import { Sidebar } from '../../components/sidebar/Sidebar.jsx' 
-import { Publication } from '../../components/Publication.jsx'
-import "./homePage.css"
+import { useState } from "react";
+import { Sidebar } from "../../components/sidebar/Sidebar";
+import { Publication } from "../../components/Publication";
+import "./homePage.css";
+
 export const HomePage = () => {
+  const [selectedCourseId, setSelectedCourseId] = useState(null);
+
   return (
     <div className="homepage-container">
-      <Sidebar />
-      <Publication/>
+      <Sidebar onSelectCourse={setSelectedCourseId} />
+      <Publication uid={selectedCourseId} />
     </div>
-  )
-}
+  );
+};
