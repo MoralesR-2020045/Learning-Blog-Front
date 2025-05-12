@@ -1,0 +1,253 @@
+/* GENERAL */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #282828;
+  color: #f0f0f0;
+  font-size: 18px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.homepage-container {
+  display: flex;
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 340px;
+  padding: 2.5rem 2rem;
+  border-right: 1px solid #333;
+  background-color: #454545;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+  color: #f0f0f0;
+  font-size: 1.2rem;
+}
+
+.sidebar h2,
+.sidebar h3 {
+  margin: 0 0 1.5rem 0;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1.2rem;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 0.6rem 0.9rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover {
+  background-color: #5c5c5c;
+  color: #FFBB00;
+}
+
+/* WRAPPER DE PUBLICACIÓN + COMENTARIOS */
+.publication-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* PUBLICACIONES */
+.publication-container {
+  flex: 2;
+  min-width: 0;
+  padding: 2.5rem;
+  overflow-y: auto;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.publication-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.publication-message {
+  text-align: center;
+  color: #cccccc;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* CARD */
+.publication-card {
+  background-color: #454545;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s;
+  width: 100%;
+  max-width: 520px;
+  color: #ffffff;
+}
+
+.publication-card:hover {
+  background-color: #5a5a5a;
+  transform: translateY(-2px);
+}
+
+.publication-card-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+  font-weight: bold;
+}
+
+.publication-card-description {
+  margin-bottom: 0.6rem;
+  color: #dddddd;
+  font-size: 1.05rem;
+}
+
+.publication-card-date {
+  font-size: 0.95rem;
+  color: #cccccc;
+}
+
+.publication-card button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #FFBB00;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.publication-card button:hover {
+  background-color: #e6a800;
+}
+
+/* COMENTARIOS */
+.comments-panel {
+  width: 700px;
+  max-width: 100%;
+  padding: 2.5rem 2rem;
+  border-left: 1px solid #333;
+  background-color: #454545;
+  overflow-y: auto;
+  color: #ffffff;
+}
+
+.comments-panel h3 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* LISTA DE COMENTARIOS */
+.comment-list {
+  max-height: 700px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.comment-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #666;
+  font-size: 1.2rem;
+}
+
+.comment-item strong {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.comment-item p {
+  margin: 0.6rem 0;
+  color: #dddddd;
+  font-size: 1.05rem;
+}
+
+.comment-item small {
+  color: #bbbbbb;
+  font-size: 1rem;
+}
+
+/* FORMULARIO DE COMENTARIOS */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #666;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  background-color: #333;
+  color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFBB00;
+  box-shadow: 0 0 0 2px rgba(255, 187, 0, 0.3);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* BOTONES */
+button {
+  background-color: #FFBB00;
+  color: #000000;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #e6a800;
+}
+
+/* SCROLLBAR ESTÉTICO */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
